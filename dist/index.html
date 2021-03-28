@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="/assets/css/styles.css">
 
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+<script>
+function search() {
+ // Declare variables
+ var input, filter, ul, li, a, i, txtValue;
+ input = document.getElementById('myInput');
+ filter = input.value.toUpperCase();
+ ul = document.getElementById("myUL");
+ li = ul.getElementsByTagName('div');
+
+ // Loop through all list items, and hide those who don't match the search query
+ for (i = 0; i < li.length; i++) {
+   a = li[i].getElementsByTagName("h1")[0];
+   txtValue = a.textContent || a.innerText;
+   if (txtValue.toUpperCase().indexOf(filter) > -1) {
+     li[i].style.display = "";
+   } else {
+     li[i].style.display = "none";
+   }
+ }
+}
+</script>
   </head>
   <body>
     <!--script src="/assets/js/aos.js"-->
@@ -18,8 +39,8 @@
     <section data-aos-once="true" data-aos="fade-up" class="bg-gradient-to-tr via-gray-900 to-teal-500 from-gray-900 md:pt-12 text-gray-600 px-auto mx-auto body-font">
       <div class="max-w-screen-lg mx-auto px-5 py-12 items-left">
         <div class="items-center text-left mb-16 lg:mb-0">
-          <h1 class="text-4xl sm:text-5xl font-extrabold lg:text-8xl font-medium tracking-tight text-white">Navigate the world of cricket</h1>
-          <p class="mb-8 text-gray-500 text-4xl sm:text-5xl font-extrabold lg:text-8xl bg-gradient-to-r from-teal-500 to-green-400 bg-clip-text text-transparent font-medium tracking-tight text-white leading-relaxed">In one place</p>
+          <h1 class="text-4xl sm:text-5xl font-extrabold lg:text-8xl tracking-tight text-white">Navigate the world of cricket</h1>
+          <p class="mb-8 text-gray-500 text-4xl sm:text-5xl font-extrabold lg:text-8xl bg-gradient-to-r from-teal-500 to-green-400 bg-clip-text text-transparent tracking-tight text-white leading-relaxed">In one place</p>
           <div class="sm:flex w-full md:w-auto">
             <input placeholder="Get news delivered to your inbox" class="block w-full border-0 bg-gray-800 px-6 py-5 rounded-lg text-lg text-white placeholder-gray-300 focus:outline-none transition duration-500 ease-in-out focus:text-gray-900 focus:ring-2 focus:ring-teal-500 sm:w-96">
             <button title="sign up" class="sm:ml-4 mt-2 sm:mt-auto font-medium md:mt-0 w-full sm:w-auto text-gray-800 hover:text-gray-900 border-0 px-6 py-5 bg-white focus:outline-none transition active:ring-2 active:ring-teal-500 transition duration-500 ease-in-out text-lg duration-100 ease-in-out rounded-lg">Sign up</button>
@@ -37,116 +58,61 @@
   <div class="px-4 py-1 font-medium hover:text-gray-900 transition duration-500 ease-in-out text-gray-500 px-4 py-1 rounded-full">Scores and stats
   </div>
 </nav>
-<div class="grid lg:grid-cols-3 md:grid-cols-2 max-w-screen-lg mx-auto">
+<div id="page" class="mx-auto max-w-screen-lg py-4">
+<input id="myInput" onkeyup="search()" placeholder="Search top sites" class="my-6 border appearance-none mx-2 text-xl py-1 font-medium hover:text-gray-900 transition focus:outline-none focus:ring-2 focus:ring-teal-500 duration-500 focus:border-teal-500 ease-in-out text-gray-500 px-4 py-1 rounded-full" name="text">
+<div id="myUL" class="grid lg:grid-cols-3 md:grid-cols-2 max-w-screen-lg mx-auto">
 <div class="w-full p-2">
   <img class="rounded-t-xl" src="https://api.apiflash.com/v1/urltoimage?access_key=ac187c9078d948a5b6bcfa61080a3a12&no_cookie_banners=true&url=https://espncricinfo.com"></img>
   <div class="px-3 shadow-xl rounded-xl py-12">
     <h1 class="text-4xl font-extrabold pb-2 text-gray-800">ESPNCricinfo</h1>
-    <h1 class="text-xl font-medium text-gray-600">Check Live Cricket Scores, Match Schedules, News, Cricket Videos Online</h1>
+    <h2 class="text-xl font-medium text-gray-600">Check Live Cricket Scores, Match Schedules, News, Cricket Videos Online</h1>
   </div>
 </div>
 <div class="w-full p-2">
   <img class="rounded-t-xl" src="https://api.apiflash.com/v1/urltoimage?access_key=ac187c9078d948a5b6bcfa61080a3a12&no_cookie_banners=true&url=https://www.skysports.com/cricket&no_ads=true"></img>
   <div class="px-3 shadow-xl rounded-xl py-12">
     <h1 class="text-4xl font-extrabold pb-2 text-gray-800">Sky Sports cricket</h1>
-    <h1 class="text-xl font-medium text-gray-600">Cricket Scores, Highlights, News & Fixtures | Sky Sports</h1>
+    <h2 class="text-xl font-medium text-gray-600">Cricket Scores, Highlights, News & Fixtures | Sky Sports</h1>
   </div>
 </div>
 <div class="w-full p-2">
   <img class="rounded-t-xl" src="https://api.apiflash.com/v1/urltoimage?access_key=ac187c9078d948a5b6bcfa61080a3a12&no_cookie_banners=true&url=https://www.bbc.co.uk/sport/cricket&no_ads=true"></img>
   <div class="px-3 shadow-xl rounded-xl py-12">
     <h1 class="text-4xl font-extrabold pb-2 text-gray-800">BBC Sports cricket</h1>
-    <h1 class="text-xl font-medium text-gray-600">The home of Cricket on BBC Sport online | BBC Sports</h1>
+    <h2 class="text-xl font-medium text-gray-600">The home of Cricket on BBC Sport online | BBC Sports</h1>
   </div>
 </div>
 <div class="w-full p-2">
   <img class="rounded-t-xl" src="https://api.apiflash.com/v1/urltoimage?access_key=ac187c9078d948a5b6bcfa61080a3a12&no_cookie_banners=true&url=https://www.theguardian.com/sport/cricket&no_ads=true"></img>
   <div class="px-3 shadow-xl rounded-xl py-12">
     <h1 class="text-4xl font-extrabold pb-2 text-gray-800">The Guardian</h1>
-    <h1 class="text-xl font-medium text-gray-600">All your latest cricket news on the Guardian.</h1>
+    <h2 class="text-xl font-medium text-gray-600">All your latest cricket news on the Guardian.</h1>
+  </div>
+</div>
+<div class="w-full p-2">
+  <img class="rounded-t-xl" src="https://api.apiflash.com/v1/urltoimage?access_key=ac187c9078d948a5b6bcfa61080a3a12&no_cookie_banners=true&url=https://web.smartcric.com&no_ads=true"></img>
+  <div class="px-3 shadow-xl rounded-xl py-12">
+    <h1 class="text-4xl font-extrabold pb-2 text-gray-800">Smartcric</h1>
+    <h2 class="text-xl font-medium text-gray-600">Global Cricket Happenings from around the world</h1>
+  </div>
+</div>
+<div class="w-full p-2">
+  <img class="rounded-t-xl" src="https://api.apiflash.com/v1/urltoimage?access_key=ac187c9078d948a5b6bcfa61080a3a12&no_cookie_banners=true&url=https://www.cricbuzz.com&no_ads=true"></img>
+  <div class="px-3 shadow-xl rounded-xl py-12">
+    <h1 class="text-4xl font-extrabold pb-2 text-gray-800">Cricbuzz</h1>
+    <h2 class="text-xl font-medium text-gray-600">Cricket Score, Schedule, Latest News, Stats & Videos</h1>
   </div>
 </div>
 </div>
-<footer>
+</div>
+
 <div class="text-gray-600 max-w-screen-lg mx-auto body-font">
-  <div class="px-5 py-24 bg-clip-padding mx-auto">
-    <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
-      <div class="md:w-1/4 md:w-1/2 w-full px-4">
-        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">FAMILY</h2>
-        <nav class="list-none mb-10">
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">ACME</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Single Techno</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Globex</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Indiestry</a>
-          </li>
-        </nav>
-      </div>
-      <div class="md:w-1/4 w-full px-4">
-        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">PRODUCTS</h2>
-        <nav class="list-none mb-10">
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">VSCode Pro</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Atom UX</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Vim Ultimate</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Tasks</a>
-          </li>
-        </nav>
-      </div>
-      <div class="md:w-1/4 md:w-1/2 w-full px-4">
-        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">FAMILY</h2>
-        <nav class="list-none mb-10">
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">ACME</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Single Techno</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Globex</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Indiestry</a>
-          </li>
-        </nav>
-      </div>
-      <div class="md:w-1/4 w-full px-4">
-        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">PRODUCTS</h2>
-        <nav class="list-none mb-10">
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">VSCode Pro</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Atom UX</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Vim Ultimate</a>
-          </li>
-          <li>
-            <a class="text-gray-600 hover:text-gray-800">Tasks</a>
-          </li>
-        </nav>
-      </div>
-    </div>
-  </div>
   <div class="text-gray-600 body-font">
   <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
     <a class="flex title-font font-extrabold items-center md:justify-start justify-center text-gray-900">
-      <span class="text-xl">Thea</span>
+      <span class="text-xl">Cricket on web</span>
     </a>
-    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Thea - All rights reserved
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Cricket on web - A project by <a href="https://easyui.dev" title="Easy UI" class="text-gray-800 hover:underline">Easy UI</a>
     </p>
     <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
       <a class="text-gray-500">
@@ -175,6 +141,5 @@
   </div>
 </div>
 </div>
-</footer>
   </body>
 </html>
