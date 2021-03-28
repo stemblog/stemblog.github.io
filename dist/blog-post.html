@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thea</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/aos.css">
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+  </head>
+  <body class="pt-24">
+    <script src="/assets/js/aos.js">
+    </script>
+    <script>
+  AOS.init();
+</script>
+    <nav class="nav flex bg-white absolute flex-wrap items-center justify-between md:rounded-none md:shadow-none shadow-sm w-full top-0 px-4">
+        <div class="h-24 text-lg  font-bold flex flex-no-shrink tgr items-center mr-6 py-3">
+           <a class="text-light-blue-600" href="/">Thea</a>
+
+        </div>
+
+        <input class="menu-btn hidden" type="checkbox" id="menu-btn">
+        <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+          <span class="navicon bg-gray-400 flex items-center relative"></span>
+        </label>
+        <ul class="menu border-none  flex justify-end list-reset m-0 w-full md:w-auto">
+          <li class="border-none">
+            <a href="/pricing.html" class="block font-medium md:inline-block px-4 py-3 text-md no-underline text-gray-500 hover:text-gray-700">Pricing</a>
+          </li>
+          <li x-data="{ open: false }" class="items-center border-none">
+            <button href="#" @click="open = !open" class="inline-flex block font-medium px-4 py-3 focus:outline-none text-md no-underline text-gray-500 hover:text-gray-700"><span>Solutions</span><svg class="mt-0.5 h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            <div x-show="open" @click.away="open = false"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="md:opacity-0 translate-y-2"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-150"
+                x-transition:leave-start="opacity-100 translate-y-0"
+                x-transition:leave-end="opacity-0 translate-y-2"
+            class="translate-x-0 scale-100 bg-white shadow transform transition ease-in-out duration-200 bg-white block md:absolute max-w-sm top-16 inset-x-1/4 rounded-2xl shadow-xl">
+              <ul class="p-4 relative z-100 block">
+                <li class="flex items-center my-2 py-2 px-4 rounded-lg hover:bg-gray-50">
+                  <div class="py-auto px-auto">
+                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-light-blue-500 text-white flex-shrink-0">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                        <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-gray-900 font-medium">Services</p>
+                    <p class="text-gray-700">See all the services and features that Thea has to offer</p>
+                  </div>
+                </li>
+
+                <li class="flex items-center my-2 py-2 px-4 rounded-lg hover:bg-gray-50">
+                  <div class="py-auto px-auto">
+                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-light-blue-500 text-white flex-shrink-0">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                        <path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-gray-900 font-medium">Support</p>
+                    <p class="text-gray-700">Get support for any of our products from a real human.</p>
+                  </div>
+                </li>
+
+                <li class="flex items-center my-2 py-2 px-4 rounded-lg hover:bg-gray-50">
+                  <div class="py-auto px-auto">
+                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-light-blue-500 text-white flex-shrink-0">
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-6 h-6" viewBox="0 0 24 24">
+                        <path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="ml-4">
+                    <p class="text-gray-900 font-medium">Tutorials</p>
+                    <p class="text-gray-700">We give free tutorials so you can learn to use features yourself!</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="border-none">
+            <a href="/about.html" class="block font-medium md:inline-block px-4 py-3 text-md no-underline text-gray-500 hover:text-gray-700">About Us</a>
+          </li>
+          <li class="border-none">
+            <a href="/blog.html" class="block font-medium md:inline-block px-4 py-3 text-md no-underline text-gray-500 hover:text-gray-700">Blog</a>
+          </li>
+        </ul>
+        <ul class="menu border-none flex justify-end list-reset m-0 w-full md:w-auto">
+          <li class="border-none">
+            <a href="/login.html" class="block md:inline-block px-4 py-2 transition duration-100 text-light-blue-600 hover:text-light-blue-800 ease-in my-1 text-center md:text-justify rounded text-md no-underline font-medium">Sign in</a>
+          </li>
+          <li class="border-none">
+            <a href="/signup.html" class="block md:inline-block px-4 py-2 bg-light-blue-500 hover:bg-light-blue-600 transition duration-100 ease-in my-1 text-center md:text-justify rounded-lg text-md no-underline text-white font-medium">Sign up</a>
+          </li>
+
+        </ul>
+    </nav>
+<section class="px-5 mx-auto py-12 max-w-screen-lg flex text-gray-600">
+  <div class="mx-auto">
+  <article data-aos="fade-up" class="max-w-none prose">
+  <h1 class="text-center">Building Thea</h1>
+  <img src="https://source.unsplash.com/1600x900/?nature">
+  <p class="lead">
+  Until now it has been very hard to manage your team without some chaos. Thea aims to change that. We introduced an amazing task management system that does so much.
+  </p>
+  <p>
+  Thea uses the <code>@tailwindcss/typography</code> plugin to make its beautiful blog posts. However we haven't done just that. We have added custom styles so your blog posts look better than before.
+  </p>
+  <pre><code><span><span>deploying</span></span>...
+done +<span>1.0</span> seconds!
+<span><span>starting</span></span> server...
+ERR could <span>not</span> determine server type!
+</code></pre>
+<blockquote>
+<p>But what else can it do?</p>
+</blockquote>
+<p>Glad you asked. A list of bullets:</p>
+<ul>
+<li>Some item #3</li>
+<li>Some item #2</li>
+<li>Some item #1</li>
+</ul>
+<blockquote>
+<p>But what else can it do?</p>
+</blockquote>
+<p>Yep!</p>
+<table>
+<thead>
+<tr>
+<th>Syntax</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Header</td>
+<td>Title</td>
+</tr>
+<tr>
+<td>Paragraph</td>
+<td>Text</td>
+</tr>
+</tbody>
+</table>
+<p>Adding this final sentence couldn't hurt?</p>
+<hr>
+  </article>
+  <section class="py-24 max-w-screen-lg mx-auto text-gray-600 body-font">
+    <div class="mx-auto flex items-center md:flex-row flex-col">
+      <div class="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
+        <h1 class="md:text-4xl text-3xl font-extrabold title-font text-gray-900">Start your journey. Create an account</h1>
+      </div>
+      <div class="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4">
+        <button class="font-medium bg-light-blue-500 text-white inline-flex py-3 px-5 rounded-lg items-center hover:bg-light-blue-600 focus:outline-none">
+          Create your account
+        </button>
+        <button class="font-medium bg-light-blue-100 text-light-blue-600 inline-flex py-3 px-5 rounded-lg items-center hover:text-light-blue-800 hover:bg-light-blue-200 focus:outline-none">
+          Contact Us
+        </button>
+      </div>
+    </div>
+  </section>
+</section>
+
+<footer>
+<div class="border-t text-gray-600 max-w-screen-lg mx-auto body-font">
+  <div class="px-5 py-12 bg-clip-padding mx-auto">
+    <div class="flex flex-wrap md:text-left text-center -mb-10 -mx-4">
+      <div class="md:w-1/4 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">FAMILY</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">ACME</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Single Techno</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Globex</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Indiestry</a>
+          </li>
+        </nav>
+      </div>
+      <div class="md:w-1/4 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">PRODUCTS</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">VSCode Pro</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Atom UX</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Vim Ultimate</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Tasks</a>
+          </li>
+        </nav>
+      </div>
+      <div class="md:w-1/4 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">FAMILY</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">ACME</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Single Techno</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Globex</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Indiestry</a>
+          </li>
+        </nav>
+      </div>
+      <div class="md:w-1/4 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">PRODUCTS</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">VSCode Pro</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Atom UX</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Vim Ultimate</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Tasks</a>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-extrabold items-center md:justify-start justify-center text-gray-900">
+      <span class="text-xl">Thea</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2020 Thea - All rights reserved
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</div>
+</div>
+</footer>
+  </body>
+</html>
