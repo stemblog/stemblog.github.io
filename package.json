@@ -4,9 +4,9 @@
   "description": "",
   "main": "postcss.config.js",
   "scripts": {
-    "dev": "postcss -w tailwind.css -o public/styles/tailwind.css",
-    "serve": "serve public",
-    "build": "postcss tailwind.css -o public/styles/tailwind.css"
+    "dev": "postcss -w tailwind.css -o docs/styles/tailwind.css",
+    "serve": "serve docs",
+    "build": "postcss tailwind.css -o docs/styles/tailwind.css"
   },
   "repository": {
     "type": "git",
