@@ -16,6 +16,9 @@ module.exports = {
         rose:colors.rose,
         fuchsia:colors.fuchsia,
       },
+      boxShadow: {
+        'offset-teal': '4px 4px #14B8A6'
+      },
     },
   },
   variants: {

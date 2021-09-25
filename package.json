@@ -5,7 +5,7 @@
   "main": "postcss.config.js",
   "scripts": {
     "dev": "postcss -w tailwind.css -o public/styles/tailwind.css",
-    "serve": "serve dist",
+    "serve": "serve public",
     "build": "postcss tailwind.css -o public/styles/tailwind.css"
   },
   "repository": {
