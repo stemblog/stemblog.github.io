@@ -1,0 +1,19 @@
+{% include navbar.html %}
+  <article class="mx-auto m-12 prose-light prose">
+      <h1>{{ page.title }}</h1>
+      <img src="{{ page.image }}"></img>
+      {{ content }}
+      <hr>
+      <h2>Read more:</h2>
+      {% if page.previous.url %}
+      <h3>{{ page.previous.title }}</h3>
+      <p>{{ page.previous.content | strip_html | truncatewords: 50 }}</p>
+      <a href="{{page.previous.url}}">Read more &rarr;</a>
+      {% endif %}
+      {% if page.next.url %}
+      <h3>{{ page.next.title }}</h3>
+      <p>{{ page.next.content | strip_html | truncatewords: 50 }}</p>
+      <a href="{{page.next.url}}">Read more &rarr;</a>
+      {% endif %}
+  </article>
+{% include footer.html %}
